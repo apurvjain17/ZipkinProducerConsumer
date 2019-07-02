@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Consumer
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination:  inventoryChangeTopic
+          content-type: application/json
+          group:  inventoryUpdateConsumerListener
+        binder:
+          zkNodes:  localhost
+          brokers:  localhost
+server:
+  port: 8082
